@@ -6,13 +6,13 @@ import { calculateWinner } from "../lib/winCondition";
 class Game extends React.Component {
   state = {
     boardHistory: [
+      // {
+      //   boards: [
       {
-        boards: [
-          {
-            squares: Array(9).fill(null)
-          }
-        ]
+        squares: Array(9).fill(null)
       }
+      //   ]
+      // }
     ],
     moveHistory: [-1],
     stepNumber: 0,
@@ -25,8 +25,13 @@ class Game extends React.Component {
     const currentStep = this.state.stepNumber;
     const currentPlayer = this.state.nextPlayerIsX;
     const newBoardHistory = this.state.boardHistory.slice(0, currentStep + 1);
-    const newMoveHistory = this.state.moveHistory.slice(0, currentStep + 1);
-    const newSquares = newBoardHistory[currentStep].squares.slice();
+    const newMoveHistory = this.state.moveHistory.slice(
+      0,
+      currentStep + 1
+    ); /*TODO: Now we have to have a list of tuples... */
+    const newSquares = newBoardHistory[
+      currentStep
+    ].squares.slice(); /* TODO: Change to take into account the board */
 
     //do nothing if WINNER, if newSquares[i] is occupied, if notActiveBoard
     if (calculateWinner(newSquares) || newSquares[i]) {

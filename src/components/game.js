@@ -36,7 +36,7 @@ class Game extends React.Component {
     newSquares[i] = currentPlayer ? "X" : "O"; // mark square with player, given to Squares.value
 
     this.setState({
-      boardHistory: 23432,
+      boardHistory: "lol not that",
       moveHistory: newMoveHistory.concat(i), // log the current Move
       stepNumber: newBoardHistory.length, // update stepNumber
       nextPlayerIsX: !currentPlayer // switch players

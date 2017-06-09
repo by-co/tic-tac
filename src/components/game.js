@@ -20,7 +20,7 @@ class Game extends React.Component {
     winningSquares: []
   };
 
-  handleMove(i) {
+  handleMove(b, i) {
     // don't know if naming variables is overkill orrrrr....
     const currentStep = this.state.stepNumber;
     const currentPlayer = this.state.nextPlayerIsX;
@@ -41,7 +41,7 @@ class Game extends React.Component {
     newSquares[i] = currentPlayer ? "X" : "O"; // mark square with player, given to Squares.value
 
     this.setState({
-      boardHistory: newBoardHistory.concat([{ squares: newSquares }]), // log the current Board squares
+      boardHistory: "lol not that",
       moveHistory: newMoveHistory.concat(i), // log the current Move
       stepNumber: newBoardHistory.length, // update stepNumber
       nextPlayerIsX: !currentPlayer // switch players

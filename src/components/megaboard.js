@@ -7,7 +7,7 @@ class Megaboard extends React.Component {
   };
 
   isValidBoard(b) {
-    return this.boardStatus[b];
+    return this.state.boardStatus[b];
   }
 
   handleBoardSelect(b) {
@@ -17,7 +17,7 @@ class Megaboard extends React.Component {
   }
 
   renderBoard() {
-    return [0, 1, 2, 3, 4, 5, 6, 7, 8].map(boardIndex => {
+    return Array(9).fill().map(boardIndex => {
       return (
         <Board
           key={boardIndex}
